@@ -104,7 +104,7 @@ function EliminarItem(index) {
 
 function mostrarCarritoEnDOM() {
   const carritoContainer = document.getElementById("carrito-container");
-  carritoContainer.innerHTML = ""; // Limpiar el contenido previo
+  carritoContainer.innerHTML = ""; 
 
   if (Carrito.lista.length === 0) {
       carritoContainer.textContent = "El carrito de compras está vacío.";
@@ -113,15 +113,15 @@ function mostrarCarritoEnDOM() {
 
       Carrito.lista.forEach((producto, index) => {
           const li = document.createElement("li");
-          li.style.display = "flex"; // Establecer el display flex
-          li.style.justifyContent = "space-between"; // Establecer el espacio entre elementos
-          li.style.alignItems = "center"; // Alinear elementos verticalmente
+          li.style.display = "flex"; 
+          li.style.justifyContent = "space-between";
+          li.style.alignItems = "center";
           li.style.margin= "10px";
 
           const imagenMiniatura = document.createElement("img");
           imagenMiniatura.src = producto.imagen;
-          imagenMiniatura.width = 60; // Ancho de 100px
-          imagenMiniatura.height = 40; // Alto de 50px
+          imagenMiniatura.width = 60; 
+          imagenMiniatura.height = 40;
 
           const nombreProducto = document.createElement("span");
           nombreProducto.textContent = producto.nombre;
@@ -171,7 +171,7 @@ window.onload = () => {
 
       const imgItem = document.createElement("img");
       imgItem.classList.add("img-item");
-      imgItem.src = producto.imagen; // Agrega la propiedad imagen a tus datos de producto
+      imgItem.src = producto.imagen; 
       imgItem.alt = `imágen de ${producto.nombre}`;
 
       const precioItem = document.createElement("span");
