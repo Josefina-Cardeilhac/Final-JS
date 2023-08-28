@@ -1,0 +1,10 @@
+
+//mixin con parametros
+
+@mixin productos ($max-width, $padding, $margin, $display, $justify-content){
+    max-width: $max-width;
+    padding: $padding;
+    margin: $margin;
+    display: $display;
+    justify-content: $justify-content;
+}

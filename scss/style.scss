@@ -1,0 +1,266 @@
+@import "../scss/extra/vars";
+@import "../scss/extra/mixin";
+
+* {
+    margin: $margen-general;
+    padding: $padding-general;
+    border: $borde-nulo;
+    outline: $outline-nulo;
+    text-align: center;
+}
+
+body{
+  min-height: 100vh; 
+  display: flex;
+  flex-direction: column;
+}
+main {
+  flex: 1;
+}
+nav {
+  display: flex;
+  background-color: $color-principal;
+  height: 15%;
+  width: 100%;
+
+  .logo-img img {
+      width: $img-small;
+  }
+}
+.nav-link{
+  margin-left: 40px;
+  padding: 30px;
+}
+.quienes-somos {
+    display: flex;
+    flex-direction: column;
+    background-color: $color-secundario;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+}
+
+
+.contenedor-carrusel {
+    background-color: $color-secundario;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+
+
+    .carousel-inner{
+        .carousel-item img {
+            border-radius: $radio-img;
+            width: $img-large;
+        }
+    }
+
+}
+
+.eco-friendly {
+    background-color: $color-secundario;
+    height: 70%;
+}
+
+.text-center{
+  padding-top: 4rem;
+}
+
+.texto-nosotras{
+  padding-top: 2rem;
+  margin: 5rem
+}
+
+footer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: $color-principal;
+
+    .footer-container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+    }
+
+        .footer-text-container {
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+        }
+    }
+
+
+    .sellos2 {
+        display: flex;
+        justify-content: space-around;
+        align-content: center;
+    }
+
+    .sellos2 img {
+        width: $img-small;
+    }
+
+
+
+.sellos1 {
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+}
+
+.sellos1 img {
+    width: $img-mid;
+}
+
+.conoce-productos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    background-color: $color-secundario;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+}
+
+.productos{
+    max-width: 1200px;
+    padding: 10px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    
+}
+/* ITEMS */
+  .productos .contenedor-items{
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-gap:30px;
+    grid-row-gap: 30px;
+    width: 100%;
+    transition: .3s;
+}
+.productos .contenedor-items .item{
+    max-width: 200px;
+    margin: auto;
+    border: 1px solid #666;
+    border-radius: 10px;
+    padding: 20px;
+    transition: .3s;
+}
+.productos .contenedor-items .item .img-item{
+    width: 100%;
+}
+.productos .contenedor-items .item:hover{
+    box-shadow: 0 0 10px #666;
+    scale: 1.05;
+}
+.productos .contenedor-items .item .titulo-item{
+    display: block;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.productos .contenedor-items .item .boton-item{
+    display: block;
+    margin: 10px auto;
+    border: none;
+    background-color: $color-principal;
+    color: black;
+    padding: 5px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+  /* Media query para dispositivos móviles */
+
+  @media (min-width: 320px) and (max-width: 480px) {
+     body{
+    font-size: 22px;
+
+    main .btn {
+    margin-top: 1vh;
+    margin-bottom: 2vh;
+  }
+  main .tit4{
+    display: none;
+  }
+  main{
+   padding-bottom: 5px;
+  }
+  main.home{
+    margin-top: 70px;
+    margin-bottom: 150px;
+  }
+  img.hierbas{
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
+  .quienes-somos{
+    margin-top: 50px;
+  }
+  a.btn{
+    margin-top: 80px;
+    margin-bottom: 70px;
+  }
+.eco-friendly{
+    display: none;
+}
+ .texto-nosotras{
+    display:none ;
+  }
+  .eco-friendly{
+    font-display: none;
+  }
+  .sellos1{
+    display: none;
+    }
+  }
+}
+
+/* Media query para tablets */
+@media (min-width: 481px) and (max-width: 1023px) {
+  body{
+    font-size: 30px;
+
+    
+
+  main .btn {
+    margin-top: 1vh;
+    margin-bottom: 2vh;
+  }
+  .productos{
+    font-size: 20px;
+  }
+  .container-text-center{
+    margin: 120px;
+    padding: 26px;
+    
+  }
+  .texto-nosotras{
+    display: none;
+  }
+  .sellos1 {
+    display: none;
+  }
+  }
+  footer{
+    font-size: 25px;
+  }
+}
+  
+/* Media query para desktops */
+@media (min-width: 1024px) and (max-width: 1440px) {
+
+ footer .sellos2{
+  display: none;
+}
+}
