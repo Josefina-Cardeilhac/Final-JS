@@ -128,6 +128,7 @@ function mostrarCarritoEnDOM() {
 
           const eliminarButton = document.createElement("button");
           eliminarButton.textContent = "Eliminar del carrito";
+          eliminarButton.classList.add("btn", "btn-primary");
           eliminarButton.addEventListener("click", () => EliminarItem(index));
           eliminarButton.addEventListener("click", () => mostrarAlerta3());
 
@@ -194,6 +195,7 @@ window.onload = () => {
 
   const botonVaciarCarrito = document.createElement("button");
   botonVaciarCarrito.textContent = "Vaciar Carrito";
+  botonVaciarCarrito.classList.add("btn", "btn-primary");
   botonVaciarCarrito.addEventListener("click", vaciarCarrito);
   botonVaciarCarrito.addEventListener("click", () => mostrarAlerta4());
 
