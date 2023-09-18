@@ -129,6 +129,7 @@ function mostrarCarritoEnDOM() {
           const eliminarButton = document.createElement("button");
           eliminarButton.textContent = "Eliminar del carrito";
           eliminarButton.addEventListener("click", () => EliminarItem(index));
+          eliminarButton.addEventListener("click", () => mostrarAlerta3());
 
           li.appendChild(imagenMiniatura);
           li.appendChild(nombreProducto);
@@ -181,6 +182,7 @@ window.onload = () => {
       botonItem.classList.add("boton-item");
       botonItem.textContent = "Agregar al Carrito";
       botonItem.addEventListener("click", () => agregarAlCarrito(producto));
+      botonItem.addEventListener("click", () => alertaProductoAgregado());
 
       item.appendChild(tituloItem);
       item.appendChild(imgItem);
@@ -193,9 +195,50 @@ window.onload = () => {
   const botonVaciarCarrito = document.createElement("button");
   botonVaciarCarrito.textContent = "Vaciar Carrito";
   botonVaciarCarrito.addEventListener("click", vaciarCarrito);
+  botonVaciarCarrito.addEventListener("click", () => mostrarAlerta4());
 
   const vaciarCarritoDiv = document.getElementById("vaciar-carrito");
   vaciarCarritoDiv.appendChild(botonVaciarCarrito);
 
   mostrarCarritoEnDOM();
 };
+
+const alertaCorreoEnviado = () => {
+  swal("Correo enviado con éxito!","Te estermos contactando a la brevedad" ,"success");
+};
+
+const alertaProductoAgregado = () => {
+  swal("Excelente!", "Agregaste un producto al carrito" ,"success");
+};
+const mostrarAlerta3 = () => {
+  swal("Good job!", "You clicked the button!", "success");
+};
+const mostrarAlerta4 = () => {
+  swal("Good job!", "You clicked the button!", "success");
+};
+const apiKey = '4734E51CEC1F4CDB443E334BAB046B864143459541098E01AE82E6DB9B58E55592255DA2900CB42B551CC00B58C63FE7'; // Reemplaza con tu clave API de Elastic Email
+
+  const sendEmail = () => {
+    const emailData = {
+      apiKey: apiKey,
+      to: 'destinatario@example.com',
+      subject: 'Asunto del correo',
+      body: 'Contenido del correo'
+    };
+
+    // Realiza la solicitud HTTP POST a la API de Elastic Email
+    fetch('https://api.elasticemail.com/v2/email/send', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(emailData)
+    })
+    .then(response => response.json())
+    .then(data => {
+      console.log('Correo enviado con éxito:', data);
+    })
+    .catch(error => {
+      console.error('Error al enviar el correo:', error);
+    });
+  };
