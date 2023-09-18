@@ -211,10 +211,10 @@ const alertaProductoAgregado = () => {
   swal("Excelente!", "Agregaste un producto al carrito" ,"success");
 };
 const mostrarAlerta3 = () => {
-  swal("Good job!", "You clicked the button!", "success");
+  swal("Producto Eliminado", "",);
 };
 const mostrarAlerta4 = () => {
-  swal("Good job!", "You clicked the button!", "success");
+  swal("Carrito Vaciado",);
 };
 const apiKey = '4734E51CEC1F4CDB443E334BAB046B864143459541098E01AE82E6DB9B58E55592255DA2900CB42B551CC00B58C63FE7'; // Reemplaza con tu clave API de Elastic Email
 
